@@ -3,15 +3,16 @@
 import { motion } from 'framer-motion';
 import { Instagram } from 'lucide-react';
 import Image from 'next/image';
+import { optimizeCloudinaryUrl, SITE_CONFIG } from '@/constants';
 
 // Placeholder images for Instagram feed
 const INSTAGRAM_POSTS = [
-  'https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=2070&auto=format&fit=crop',
-  'https://images.unsplash.com/photo-1511285560982-1356c11d4606?q=80&w=2076&auto=format&fit=crop',
-  'https://images.unsplash.com/photo-1539109136881-3be0616acf4b?q=80&w=1974&auto=format&fit=crop',
-  'https://images.unsplash.com/photo-1514525253440-b393452e8d26?q=80&w=1974&auto=format&fit=crop',
-  'https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?q=80&w=2020&auto=format&fit=crop',
-  'https://images.unsplash.com/photo-1470225620780-dba8ba36b745?q=80&w=2070&auto=format&fit=crop'
+  'https://res.cloudinary.com/demo/image/fetch/https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=2070&auto=format&fit=crop',
+  'https://res.cloudinary.com/demo/image/fetch/https://images.unsplash.com/photo-1511285560982-1356c11d4606?q=80&w=2076&auto=format&fit=crop',
+  'https://res.cloudinary.com/demo/image/fetch/https://images.unsplash.com/photo-1539109136881-3be0616acf4b?q=80&w=1974&auto=format&fit=crop',
+  'https://res.cloudinary.com/demo/image/fetch/https://images.unsplash.com/photo-1514525253440-b393452e8d26?q=80&w=1974&auto=format&fit=crop',
+  'https://res.cloudinary.com/demo/image/fetch/https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?q=80&w=2020&auto=format&fit=crop',
+  'https://res.cloudinary.com/demo/image/fetch/https://images.unsplash.com/photo-1470225620780-dba8ba36b745?q=80&w=2070&auto=format&fit=crop'
 ];
 
 export default function InstagramFeed() {
@@ -24,13 +25,13 @@ export default function InstagramFeed() {
             <p className="text-gray-400">Follow us on Instagram</p>
           </div>
           <a
-            href="https://instagram.com"
+            href={`https://instagram.com/${SITE_CONFIG.instagram.replace('@', '')}`}
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center space-x-2 text-white hover:text-gray-300 transition-colors px-6 py-3 border border-white/20 rounded-full"
           >
             <Instagram size={20} />
-            <span className="uppercase tracking-widest text-sm font-medium">@akpstudio</span>
+            <span className="uppercase tracking-widest text-sm font-medium">{SITE_CONFIG.instagram}</span>
           </a>
         </div>
       </div>
@@ -46,7 +47,7 @@ export default function InstagramFeed() {
               whileHover={{ scale: 1.05 }}
             >
               <Image
-                src={src}
+                src={optimizeCloudinaryUrl(src)}
                 alt={`Instagram post ${index + 1}`}
                 fill
                 className="object-cover rounded-md"

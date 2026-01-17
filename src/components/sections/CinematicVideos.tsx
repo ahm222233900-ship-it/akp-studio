@@ -4,27 +4,28 @@ import { motion } from 'framer-motion';
 import { useState } from 'react';
 import { Play, X } from 'lucide-react';
 import Image from 'next/image';
+import { optimizeCloudinaryUrl } from '@/constants';
 
 const CINEMATIC_VIDEOS = [
   {
     id: 1,
     title: 'CINEMATIC WEDDING FILM',
-    thumbnail: '/images/video-1-thumb.jpg',
-    videoUrl: '/videos/wedding-film.mp4',
+    thumbnail: 'https://res.cloudinary.com/demo/image/fetch/https://images.unsplash.com/photo-1606800052052-a08af7148866?q=80&w=2070&auto=format&fit=crop',
+    videoUrl: 'https://player.vimeo.com/video/76979871',
     description: 'A love story captured in cinematic perfection'
   },
   {
     id: 2,
     title: 'ARCHITECTURAL VISUALIZATION',
-    thumbnail: '/images/video-2-thumb.jpg',
-    videoUrl: '/videos/architectural.mp4',
+    thumbnail: 'https://res.cloudinary.com/demo/image/fetch/https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070&auto=format&fit=crop',
+    videoUrl: 'https://player.vimeo.com/video/76979871',
     description: 'Spaces come alive through cinematic storytelling'
   },
   {
     id: 3,
     title: 'COMMERCIAL STORY',
-    thumbnail: '/images/video-3-thumb.jpg',
-    videoUrl: '/videos/commercial.mp4',
+    thumbnail: 'https://res.cloudinary.com/demo/image/fetch/https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=2070&auto=format&fit=crop',
+    videoUrl: 'https://player.vimeo.com/video/76979871',
     description: 'Brand narratives told through compelling visuals'
   }
 ];
@@ -66,7 +67,7 @@ export default function CinematicVideos() {
               {/* Thumbnail */}
               <div className="relative w-full h-full">
                 <Image
-                  src={video.thumbnail}
+                  src={optimizeCloudinaryUrl(video.thumbnail)}
                   alt={video.title}
                   fill
                   className="object-cover transition-transform duration-700 ease-out group-hover:scale-110"
@@ -117,14 +118,23 @@ export default function CinematicVideos() {
                 <X size={32} />
               </button>
               
-              <video
-                className="w-full h-full object-cover"
-                controls
-                autoPlay
-                src={selectedVideo.videoUrl}
-              >
-                Your browser does not support the video tag.
-              </video>
+              {selectedVideo.videoUrl.includes('player.vimeo.com') || selectedVideo.videoUrl.includes('youtube.com') ? (
+                <iframe
+                  src={selectedVideo.videoUrl}
+                  className="w-full h-full object-cover"
+                  allow="autoplay; fullscreen; picture-in-picture"
+                  allowFullScreen
+                />
+              ) : (
+                <video
+                  className="w-full h-full object-cover"
+                  controls
+                  autoPlay
+                  src={selectedVideo.videoUrl}
+                >
+                  Your browser does not support the video tag.
+                </video>
+              )}
             </div>
           </motion.div>
         )}

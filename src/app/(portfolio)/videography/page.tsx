@@ -1,15 +1,17 @@
-import PortfolioGrid from '@/components/gallery/PortfolioGrid';
+import VideoGallery from '@/components/sections/VideoGallery';
 
 export default function VideographyPage() {
   return (
-    <div className="pt-20 min-h-screen bg-black">
-      <div className="py-20 text-center px-4">
-        <h1 className="text-4xl md:text-6xl font-bold text-white uppercase tracking-tighter mb-6">Videography</h1>
-        <p className="text-xl text-gray-400 max-w-3xl mx-auto font-light">
-          Cinematic storytelling that brings your memories to life.
+    <main className="min-h-screen bg-black pt-24">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <h1 className="text-4xl md:text-6xl font-serif font-bold text-white uppercase tracking-widest mb-6">
+          Videography
+        </h1>
+        <p className="text-gray-400 font-sans tracking-wide max-w-xl mb-12">
+          Films only. Hover for a subtle motion. Click to fullscreen.
         </p>
       </div>
-      <PortfolioGrid typeFilter="video" />
-    </div>
+      <VideoGallery />
+    </main>
   );
 }

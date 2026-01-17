@@ -13,7 +13,7 @@ export default function DirectorVision() {
             viewport={{ once: true }}
             className="text-xs font-sans text-gray-400 uppercase tracking-[0.3em]"
           >
-            Director's Vision
+            Director&apos;s Vision
           </motion.h2>
 
           <motion.p
@@ -23,7 +23,7 @@ export default function DirectorVision() {
             transition={{ delay: 0.2 }}
             className="text-3xl md:text-5xl lg:text-6xl font-serif italic text-white leading-tight"
           >
-            "We believe that every moment holds a story waiting to be told. Our mission is not just to capture events, but to preserve the emotions, the atmosphere, and the fleeting beauty of life in its purest form."
+            We believe that every moment holds a story waiting to be told. Our mission is not just to capture events, but to preserve the emotions, the atmosphere, and the fleeting beauty of life in its purest form.
           </motion.p>
 
           <motion.div

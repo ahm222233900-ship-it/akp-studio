@@ -1,11 +1,11 @@
 'use client';
 
-import { useState } from 'react';
+import { useMemo, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
 import { cn } from '@/lib/utils';
-import { PROJECTS } from '@/constants';
+import { PROJECTS, optimizeCloudinaryUrl } from '@/constants';
 
 const TABS = [
   { id: 'all', label: 'All Work' },
@@ -22,19 +22,23 @@ interface PortfolioGridProps {
 
 export default function PortfolioGrid({ defaultCategory = 'all', typeFilter = 'all' }: PortfolioGridProps) {
   const [activeTab, setActiveTab] = useState(defaultCategory);
+  const [query, setQuery] = useState('');
 
-  const filteredProjects = PROJECTS.filter(project => {
-    // First filter by type (Photo/Video)
-    if (typeFilter !== 'all' && project.type !== typeFilter) return false;
-    
-    // Then filter by category tab
-    if (activeTab === 'all') return true;
-    return project.category === activeTab;
-  });
+  const filteredProjects = useMemo(() => {
+    return PROJECTS.filter(project => {
+      if (typeFilter !== 'all' && project.type !== typeFilter) return false;
+      if (activeTab !== 'all' && project.category !== activeTab) return false;
+      if (query.trim()) {
+        const hay = `${project.title} ${project.client} ${project.location} ${project.category}`.toLowerCase();
+        const needle = query.toLowerCase();
+        if (!hay.includes(needle)) return false;
+      }
+      return true;
+    });
+  }, [typeFilter, activeTab, query]);
 
   return (
     <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
-      {/* Tabs */}
       <div className="flex flex-wrap justify-center gap-4 mb-12">
         {TABS.map((tab) => (
           <button
@@ -50,6 +54,12 @@ export default function PortfolioGrid({ defaultCategory = 'all', typeFilter = 'a
             {tab.label}
           </button>
         ))}
+        <input
+          value={query}
+          onChange={(e) => setQuery(e.target.value)}
+          placeholder="Search projects"
+          className="px-4 py-2 rounded-full bg-transparent text-gray-200 border border-white/20 focus:outline-none focus:border-white/40"
+        />
       </div>
 
       {/* Grid */}
@@ -67,7 +77,7 @@ export default function PortfolioGrid({ defaultCategory = 'all', typeFilter = 'a
             >
               <Link href={`/projects/${project.id}`}>
                 <Image
-                  src={project.image}
+                  src={optimizeCloudinaryUrl(project.image)}
                   alt={project.title}
                   fill
                   className="object-cover transition-transform duration-700 group-hover:scale-105"

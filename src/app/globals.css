@@ -1,8 +1,8 @@
 @import "tailwindcss";
 
 :root {
-  --background: #000000;
-  --foreground: #ffffff;
+  --background: #050505;
+  --foreground: #fafafa;
   --muted-foreground: #9CA3AF;
   --secondary: #0A0A0A;
 }
@@ -50,6 +50,14 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 400;
   letter-spacing: var(--tracking-wide);
   text-transform: uppercase;
+}
+
+.cinema-mode [data-role="site-navbar"],
+.cinema-mode [data-role="site-footer"],
+.cinema-mode .container,
+.cinema-mode .custom-cursor {
+  opacity: 0 !important;
+  pointer-events: none !important;
 }
 
 .container {

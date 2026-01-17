@@ -4,6 +4,7 @@ import "./globals.css";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import SmoothScrollProvider from "@/components/shared/SmoothScrollProvider";
+import PageTransitionOverlay from "@/components/shared/PageTransitionOverlay";
 import CustomCursor from "@/components/ui/CustomCursor";
 import { SITE_CONFIG } from "@/constants";
 
@@ -56,8 +57,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="dark">
-      <body className={`${inter.variable} ${cormorant.variable} font-sans bg-black text-white antialiased`}>
+      <body className={`${inter.variable} ${cormorant.variable} font-sans bg-[#050505] text-white antialiased`}>
         <CustomCursor />
+        <PageTransitionOverlay />
         <SmoothScrollProvider>
           <Navbar />
           <main className="min-h-screen">

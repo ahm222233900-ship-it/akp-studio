@@ -1,8 +1,9 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { motion } from 'framer-motion';
-import { Instagram, Mail, Phone, MapPin } from 'lucide-react';
+import { Mail, Phone, MapPin } from 'lucide-react';
 import { SITE_CONFIG, NAVIGATION_LINKS, SOCIAL_LINKS, CONTACT_INFO } from '@/constants';
 
 export default function Footer() {
@@ -13,14 +14,20 @@ export default function Footer() {
       transition={{ duration: 0.8, ease: 'easeOut' }}
       viewport={{ once: true }}
       className="bg-black border-t border-white/10 py-16"
+      data-role="site-footer"
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
           {/* Brand */}
           <div className="space-y-6">
-            <h3 className="text-white text-2xl font-bold tracking-widest uppercase">
-              {SITE_CONFIG.name}
-            </h3>
+            <Link href="/" className="block relative w-40 h-16">
+              <Image 
+                src="/logo-white.svg"
+                alt={SITE_CONFIG.name}
+                fill
+                className="object-contain object-left"
+              />
+            </Link>
             <p className="text-gray-400 text-sm leading-relaxed max-w-xs">
               {SITE_CONFIG.description}
             </p>

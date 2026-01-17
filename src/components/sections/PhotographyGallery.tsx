@@ -8,56 +8,56 @@ import { X, ChevronLeft, ChevronRight } from 'lucide-react';
 const PHOTOGRAPHY_IMAGES = [
   {
     id: 1,
-    src: '/images/photography/wedding-1.jpg',
+    src: 'https://res.cloudinary.com/demo/image/fetch/https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=2070&auto=format&fit=crop',
     category: 'weddings',
     title: 'Romantic Wedding Moment',
     description: 'Capturing the essence of love and celebration'
   },
   {
     id: 2,
-    src: '/images/photography/architectural-1.jpg',
+    src: 'https://res.cloudinary.com/demo/image/fetch/https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070&auto=format&fit=crop',
     category: 'architectural',
     title: 'Modern Architecture',
     description: 'Geometric beauty in contemporary design'
   },
   {
     id: 3,
-    src: '/images/photography/street-1.jpg',
+    src: 'https://res.cloudinary.com/demo/image/fetch/https://images.unsplash.com/photo-1470225620780-dba8ba36b745?q=80&w=2070&auto=format&fit=crop',
     category: 'street-life',
     title: 'Urban Life',
     description: 'Raw emotions in the heart of the city'
   },
   {
     id: 4,
-    src: '/images/photography/event-1.jpg',
+    src: 'https://res.cloudinary.com/demo/image/fetch/https://images.unsplash.com/photo-1518820983433-2a7d2d3b5f4f?q=80&w=1974&auto=format&fit=crop',
     category: 'events',
     title: 'Corporate Event',
     description: 'Professional event photography with artistic touch'
   },
   {
     id: 5,
-    src: '/images/photography/wedding-2.jpg',
+    src: 'https://res.cloudinary.com/demo/image/fetch/https://images.unsplash.com/photo-1511285560982-1356c11d4606?q=80&w=2076&auto=format&fit=crop',
     category: 'weddings',
     title: 'Wedding Celebration',
     description: 'Joyful moments of matrimonial bliss'
   },
   {
     id: 6,
-    src: '/images/photography/architectural-2.jpg',
+    src: 'https://res.cloudinary.com/demo/image/fetch/https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1974&auto=format&fit=crop',
     category: 'architectural',
     title: 'Architectural Detail',
     description: 'Intricate details in building design'
   },
   {
     id: 7,
-    src: '/images/photography/street-2.jpg',
+    src: 'https://res.cloudinary.com/demo/image/fetch/https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=2070&auto=format&fit=crop',
     category: 'street-life',
     title: 'Street Portrait',
     description: 'Authentic human stories on the streets'
   },
   {
     id: 8,
-    src: '/images/photography/event-2.jpg',
+    src: 'https://res.cloudinary.com/demo/image/fetch/https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?q=80&w=1974&auto=format&fit=crop',
     category: 'events',
     title: 'Event Atmosphere',
     description: 'Capturing the energy of special occasions'

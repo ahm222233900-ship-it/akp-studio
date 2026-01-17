@@ -10,7 +10,7 @@ const VIDEO_PROJECTS = [
     id: 1,
     title: 'LUXURY WEDDING FILM',
     category: 'Wedding Films',
-    thumbnail: '/images/videos/wedding-thumb.jpg',
+    thumbnail: 'https://res.cloudinary.com/demo/image/fetch/https://images.unsplash.com/photo-1511285560982-1356c11d4606?q=80&w=2076&auto=format&fit=crop',
     videoUrl: '/videos/wedding-film.mp4',
     description: 'A cinematic love story captured in breathtaking detail',
     duration: '4:32'
@@ -19,7 +19,7 @@ const VIDEO_PROJECTS = [
     id: 2,
     title: 'ARCHITECTURAL VISUALIZATION',
     category: 'Commercial',
-    thumbnail: '/images/videos/architectural-thumb.jpg',
+    thumbnail: 'https://res.cloudinary.com/demo/image/fetch/https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070&auto=format&fit=crop',
     videoUrl: '/videos/architectural.mp4',
     description: 'Modern spaces brought to life through cinematic storytelling',
     duration: '2:45'
@@ -28,7 +28,7 @@ const VIDEO_PROJECTS = [
     id: 3,
     title: 'BRAND COMMERCIAL',
     category: 'Commercial',
-    thumbnail: '/images/videos/commercial-thumb.jpg',
+    thumbnail: 'https://res.cloudinary.com/demo/image/fetch/https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=2070&auto=format&fit=crop',
     videoUrl: '/videos/commercial.mp4',
     description: 'Compelling brand narratives with cinematic quality',
     duration: '1:28'
@@ -37,7 +37,7 @@ const VIDEO_PROJECTS = [
     id: 4,
     title: 'ARTISTIC SHORT FILM',
     category: 'Short Films',
-    thumbnail: '/images/videos/short-film-thumb.jpg',
+    thumbnail: 'https://res.cloudinary.com/demo/image/fetch/https://images.unsplash.com/photo-1514525253440-b393452e8d26?q=80&w=1974&auto=format&fit=crop',
     videoUrl: '/videos/short-film.mp4',
     description: 'An exploration of human emotion through visual poetry',
     duration: '8:15'
@@ -46,7 +46,7 @@ const VIDEO_PROJECTS = [
     id: 5,
     title: 'MUSIC VIDEO',
     category: 'Music Videos',
-    thumbnail: '/images/videos/music-video-thumb.jpg',
+    thumbnail: 'https://res.cloudinary.com/demo/image/fetch/https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?q=80&w=1974&auto=format&fit=crop',
     videoUrl: '/videos/music-video.mp4',
     description: 'Rhythm and visuals merge in perfect harmony',
     duration: '3:42'
@@ -55,7 +55,7 @@ const VIDEO_PROJECTS = [
     id: 6,
     title: 'EVENT HIGHLIGHTS',
     category: 'Events',
-    thumbnail: '/images/videos/event-thumb.jpg',
+    thumbnail: 'https://res.cloudinary.com/demo/image/fetch/https://images.unsplash.com/photo-1518820983433-2a7d2d3b5f4f?q=80&w=1974&auto=format&fit=crop',
     videoUrl: '/videos/event-highlights.mp4',
     description: 'Energy and atmosphere of special occasions',
     duration: '3:18'
